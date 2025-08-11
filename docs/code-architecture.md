@@ -15,11 +15,11 @@ anp-proxy/
 │   ├── protocol/                 # ANPX 协议 SDK（可独立封装）
 │   ├── common/                   # 公共工具和配置
 │   └── examples/                 # 使用示例
-├── tests/                         # 测试代码
-├── docs/                          # 文档
-├── pyproject.toml                 # UV 配置文件
+├── tests/                        # 测试代码
+├── docs/                         # 文档
+├── pyproject.toml                # UV 配置文件
 └── README.md
-├── anp_proxy.py                   # 主入口文件
+├── anp_proxy.py                  # 主入口文件
 ```
 
 ## 核心模块设计
@@ -184,6 +184,9 @@ proxy.run_both()  # 同时启动 Gateway 和 Receiver
 ## 架构优势
 
 **✅ 框架无关**：Protocol 层完全独立，Gateway/Receiver 可适配任意框架
+
 **✅ 全量转发**：完整封装 HTTP 五元组，支持分片传输
+
 **✅ 安全可靠**：WSS + 双向认证 + CRC 校验 + 断线重连
+
 **✅ 高性能异步**：纯异步架构，单连接多并发，无磁盘落地
